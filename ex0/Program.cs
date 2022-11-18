@@ -11,6 +11,7 @@ try
 catch (Exception ex)
 {
     Console.WriteLine($"Ошибка ввода! {ex.Message}");
+    return;
 }
 
 // 3. Возводим число в квадрат
