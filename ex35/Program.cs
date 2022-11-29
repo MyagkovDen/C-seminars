@@ -1,14 +1,13 @@
-﻿// Задайте одномерный массив из 123 
+﻿// Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива, 
+// значения которых лежат в отрезке [10,99].
 
 Console.Clear();
 
-
 int[] array = GetArray(123, 0, 199);
 Console.WriteLine(String.Join(" ", array));
-
-int count = CountNumber(array);
 Console.WriteLine();
 
+int count = CountNumber(array);
 Console.WriteLine(count);
 
 
@@ -16,35 +15,19 @@ Console.WriteLine(count);
 //////////////////////////////////////////////////////////////////////////////////
 
 // Возвращает массив из size элементов,
-
 // заполненный случайными числами из промежутка [minValue, maxValue]
 
-
-
-
-
 int[] GetArray(int size, int minValue, int maxValue)
-
 {
-
     int[] res = new int[size];
-
-
     for (int i = 0; i < size; i++)
-
     {
-
         res[i] = new Random().Next(minValue, maxValue + 1);
-
     }
-
     return res;
-
 }
 
-
-// Возвращает сумму положительных чисел массива arr
-
+// Возвращает количество искомых элементов
 
 int CountNumber(int[] arr)
 {
@@ -54,7 +37,7 @@ int CountNumber(int[] arr)
         if (arr[index] >= 10 && arr[index] <= 99)
             count += 1;
     }
-return count;
+    return count;
 }
 
 
