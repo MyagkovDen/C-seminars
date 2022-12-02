@@ -27,7 +27,7 @@ int[,] GetArray(int m, int n, int minValue, int maxValue)
     }
     return result;
 }
-
+/*
 int SumWithEqualIndexes(int[,] arr)
 {
     int sum = 0;
@@ -41,6 +41,22 @@ int SumWithEqualIndexes(int[,] arr)
     }
     return sum;
 }
+
+Альтернативное(оптимизированное решение)
+*/
+
+int SumWithEqualIndexes(int[,] arr)
+{
+    int sum = 0;
+    int num = arr.GetLength(0) > arr.GetLength(1) ? arr.GetLength(1) : arr.GetLength(0);
+    for (int i = 0; i < num; i++)
+    {
+        sum += arr[i, i];
+    }
+    return sum;
+}
+
+
 
 void PrintArray(int[,] inArray)
 {
